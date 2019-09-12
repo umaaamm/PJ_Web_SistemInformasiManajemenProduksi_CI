@@ -69,19 +69,19 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 						             <div class="form-group">
 						               <label for="" class="col-sm-4 control-label">Kode</label>
 						               <div class="col-sm-7">
-						                 <input type="text" class="form-control" id="" placeholder="Kode">
+						                 <input type="text" class="form-control" name="kode" placeholder="Kode">
 						               </div>
 						             </div>
                          <div class="form-group">
 						               <label for="" class="col-sm-4 control-label">Barang</label>
 						               <div class="col-sm-7">
-						                 <input type="text" class="form-control" id="" placeholder="Barang">
+						                 <input type="text" class="form-control" name="nama" placeholder="Barang">
 						               </div>
 						             </div>
 												 <div class="form-group">
 						               <label for="" class="col-sm-4 control-label">Jenis</label>
 						               <div class="col-sm-7">
-						                 <input type="text" class="form-control" id="" placeholder="Jenis">
+						                 <input type="text" class="form-control" name="jenis" placeholder="Jenis">
 						               </div>
 						             </div>
 						           </div>
@@ -94,13 +94,13 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 						             <div class="form-group">
 						               <label for="" class="col-sm-4 control-label">Harga</label>
 						               <div class="col-sm-7">
-						                 <input type="text" class="form-control" id="" placeholder="Harga">
+						                 <input type="text" class="form-control" name="harga" placeholder="Harga">
 						               </div>
 						             </div>
 						             <div class="form-group">
 						               <label for="" class="col-sm-4 control-label">Supplier</label>
 						               <div class="col-sm-7">
-						                 <input type="text" class="form-control" id="" placeholder="Supplier">
+						                 <input type="text" class="form-control" name="supplier" placeholder="Supplier">
 						               </div>
 						             </div>
 						           </div>

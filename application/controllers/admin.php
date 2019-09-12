@@ -12,10 +12,17 @@ class admin extends CI_Controller {
 
 	public function index()
 	{
-		$this->load->view('admin/header');
-		$this->load->view('admin/aside');
-		$this->load->view('admin/data_pemesan');
-		$this->load->view('footer');
+		// $this->load->view('admin/header');
+		// $this->load->view('admin/aside');
+		// $this->load->view('admin/data_pemesan');
+		// $this->load->view('footer');
+
+
+		$data['header'] = 'master/header';
+		$data['sidebar'] = 'master/aside';
+		$data['footer']= 'master/footer';
+		$data['content']= 'admin/data_suplier';
+		$this->load->view('master/data_master',$data);
 	}
 
 	public function pembelian()
