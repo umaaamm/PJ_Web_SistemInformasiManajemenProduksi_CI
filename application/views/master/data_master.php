@@ -54,25 +54,17 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     <section class="content-header">
       <h1></h1>
     </section>
-
-
-     <section class="content">
-      <!-- Small boxes (Stat box) -->
+    <section class="content">
      <div class="row">
       <div class="col-md-12">
-
-     <?php 
-
-		echo $this->session->flashdata('notif');
-	?>
-</div>
-</div>
-          <?php
-                //pingwkowkowk
-                $this->load->view($content);
-        ?>
-     
-
+	     	<?php
+					echo $this->session->flashdata('notif');
+				?>
+			</div>
+		 </div>
+			<?php
+		  	$this->load->view($content);
+		  ?>
     </section>
 		<!-- /.content -->
   </div>
@@ -121,16 +113,82 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 	<script src="<?php echo base_url(); ?>assets/bower_components/datatables.net-bs/js/dataTables.bootstrap.min.js"></script>
 	<!-- AdminLTE for demo purposes -->
 	<script src="<?php echo base_url(); ?>assets/dist/js/demo.js"></script>
+
 	<!-- page script -->
 	<script>
 		$(function () {
-			$('#dt-detail-periode-pkl').DataTable({
+
+			$('#datepicker').datepicker({
+				autoclose: true
+			})
+
+			$('#dt-list-pemesan').DataTable({
 				'paging'      : true,
 				'lengthChange': true,
 				'searching'   : true,
 				'ordering'    : true,
 				'info'        : true,
-				'scrollX'			: true,
+				'scrollX'			: false,
+				'autoWidth'   : true
+			})
+
+			$('#dt-list-pembelian').DataTable({
+				'paging'      : true,
+				'lengthChange': true,
+				'searching'   : true,
+				'ordering'    : true,
+				'info'        : true,
+				'scrollX'			: false,
+				'autoWidth'   : true
+			})
+
+			$('#dt-list-supplier').DataTable({
+				'paging'      : true,
+				'lengthChange': true,
+				'searching'   : true,
+				'ordering'    : true,
+				'info'        : true,
+				'scrollX'			: false,
+				'autoWidth'   : true
+			})
+
+			$('#dt-list-barang').DataTable({
+				'paging'      : true,
+				'lengthChange': true,
+				'searching'   : true,
+				'ordering'    : true,
+				'info'        : true,
+				'scrollX'			: false,
+				'autoWidth'   : true
+			})
+
+			$('#dt-list-jenis-cetak').DataTable({
+				'paging'      : true,
+				'lengthChange': true,
+				'searching'   : true,
+				'ordering'    : true,
+				'info'        : true,
+				'scrollX'			: false,
+				'autoWidth'   : true
+			})
+
+			$('#dt-list-akun-admin').DataTable({
+				'paging'      : true,
+				'lengthChange': true,
+				'searching'   : true,
+				'ordering'    : true,
+				'info'        : true,
+				'scrollX'			: false,
+				'autoWidth'   : true
+			})
+
+			$('#dt-list-akun-customer').DataTable({
+				'paging'      : true,
+				'lengthChange': true,
+				'searching'   : true,
+				'ordering'    : true,
+				'info'        : true,
+				'scrollX'			: false,
 				'autoWidth'   : true
 			})
 		})

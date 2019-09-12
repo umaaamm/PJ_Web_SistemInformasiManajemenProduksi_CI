@@ -13,14 +13,7 @@
 								  <div class="row">
 								  	<form class="form-horizontal" action="SimpanSupplier" method="post">
 								    <div class="col-md-5">
-						       
 						           <div class="box-body">
-						            <!--  <div class="form-group">
-						               <label for="" class="col-sm-4 control-label">Kode</label>
-						               <div class="col-sm-7">
-						                 <input type="text" class="form-control" name="kode" placeholder="Kode">
-						               </div>
-						             </div> -->
 												 <div class="form-group">
 						               <label for="" class="col-sm-4 control-label">Supplier</label>
 						               <div class="col-sm-7">
@@ -29,10 +22,9 @@
 						             </div>
 						           </div>
 						           <!-- /.box-body -->
-						        
+
 								    </div>
 								    <div class="col-md-5">
-								
 						           <div class="box-body">
 						             <div class="form-group">
 						               <label class="col-sm-4 control-label">Barang</label>
@@ -40,17 +32,14 @@
 						                 <input type="text" class="form-control" name="barang" placeholder="Barang">
 						               </div>
 						             </div>
-
 						              <div class="form-group">
 						               <label class="col-sm-4 control-label">No. Telp</label>
 						               <div class="col-sm-7">
 						                 <input type="text" class="form-control" name="nohp" placeholder="No. Telp">
 						               </div>
 						             </div>
-						            
 						           </div>
-						       </div>
-						           <!-- /.box-body -->
+						       	</div>
 								    </div>
 								  </div>
 								</div>
@@ -58,8 +47,7 @@
 								<!-- <a href="#" class="btn btn-info btn-block"><i class="fa fa-save"></i> Simpan</a> -->
 							</div>
 						</div>
-						        	</form>
-
+					</form>
 						<div class="box box-primary box-solid">
 							<div class="box-body">
 								<table id="dt-list-supplier" class="table table-bordered table-striped">
@@ -72,25 +60,18 @@
 										<th>Pilihan</th>
 									</tr>
 									</thead>
-
 									<?php
-												$a=1;
-												foreach ($data->result_array() as $key) {
-											?>
-											<tr>
-											<td><?php echo $a; ?></td>
-											<td><?php echo $key["nama_supplier"];?></td>
-                                            <td><?php echo $key["supplier_barang"];?></td> 	
-											<td><?php echo $key["telpon"];?></td>	
+										$a=1;
+											foreach ($data->result_array() as $key) {
+										?>
+										<tr>
+										<td><?php echo $a; ?></td>
+										<td><?php echo $key["nama_supplier"];?></td>
+                    <td><?php echo $key["supplier_barang"];?></td>
+										<td><?php echo $key["telpon"];?></td>
 										<td align="center">
 											<button class="btn btn-danger btn-sm" onclick="hapus('<?php echo $key["id_supplier"]; ?>')"><i class="mdi mdi-plus-circle mr-2 fa fa-close"></i></button>
 											<a href="#" class="btn btn-warning btn-sm"><i class="mdi mdi-plus-circle mr-2 fa fa-pencil"></i></a>
-                                           <!--  <button class="btn btn-info btn-sm" data-toggle="modal" data-target="#mymodal" onclick="edit('<?php echo $key["id_admin"]; ?>','<?php echo $key["nama"]; ?>','<?php echo $key["email"]; ?>','<?php echo $key["username"]; ?>','<?php echo $key['password'];?>','<?php echo $key['bagian'];?>','<?php echo $key['level'];?>')">Edit</button>  -->
-
-
-<!-- 
-											<a href="#" class="btn btn-warning btn-sm"><i class="mdi mdi-plus-circle mr-2 fa fa-pencil"></i></a>
-											<a href="#" class="btn btn-danger btn-sm"><i class="mdi mdi-plus-circle mr-2 fa fa-close"></i></a> -->
 										</td>
 									</tr>
 								<?php $a++; } ?>
@@ -104,11 +85,22 @@
 					<!-- /.box -->
 
 <script type="text/javascript">
-function hapus($id){
-	var	conf=window.confirm('Data Akan Dihapus ?');
-	if (conf) {
-		document.location='<?php echo base_url(); ?>ControllerSupplier/hapus/'+$id;
-	}
-}
+	$(function () {
+		$('#dt-list-supplier').DataTable({
+			'paging'      : true,
+			'lengthChange': true,
+			'searching'   : true,
+			'ordering'    : true,
+			'info'        : true,
+			'scrollX'			: true,
+			'autoWidth'   : true
+		})
+	})
 
+	function hapus($id){
+		var	conf=window.confirm('Data Akan Dihapus ?');
+		if (conf) {
+			document.location='<?php echo base_url(); ?>ControllerSupplier/hapus/'+$id;
+		}
+	}
 </script>

@@ -17,7 +17,7 @@ class admin extends CI_Controller {
 		// $this->load->view('admin/data_pemesan');
 		// $this->load->view('footer');
 
-
+		$data['data'] = $this->db->query('select * from tbl_supplier');
 		$data['header'] = 'master/header';
 		$data['sidebar'] = 'master/aside';
 		$data['footer']= 'master/footer';

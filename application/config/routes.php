@@ -54,5 +54,15 @@ $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
 $route['Supplier'] = 'ControllerSupplier';
 $route['SimpanSupplier'] = 'ControllerSupplier/simpan';
-
-
+$route['JenisCetak'] = 'ControllerJenisCetak';
+$route['SimpanJenisCetak'] = 'ControllerJenisCetak/simpan';
+$route['DataBarang'] = 'ControllerDataBarang';
+$route['SimpanDataBarang'] = 'ControllerDataBarang/simpan';
+$route['Pembelian'] = 'ControllerPembelian';
+$route['SimpanPembelian'] = 'ControllerPembelian/simpan';
+$route['Pemesanan'] = 'ControllerPemesanan';
+$route['SimpanPemesanan'] = 'ControllerPemesanan/simpan';
+$route['AkunAdmin'] = 'ControllerAkunAdmin';
+$route['SimpanAkunAdmin'] = 'ControllerAkunAdmin/simpan';
+$route['AkunCustomer'] = 'ControllerAkunCustomer';
+$route['SimpanAkunCustomer'] = 'ControllerAkunCustomer/simpan';

@@ -6,21 +6,35 @@
       <ul class="sidebar-menu" data-widget="tree">
         <li class="header" style="color: white;"><b>LIST MENU</b></li>
         <li>
-          <a href="<?php echo base_url(); ?>admin/index">
+          <a href="<?php echo base_url(); ?>AkunAdmin">
+            <i class="fa fa-calendar text-yellow"></i> <span>Akun Admin</span>
+            <span class="pull-right-container">
+            </span>
+          </a>
+        </li>
+        <li>
+          <a href="<?php echo base_url(); ?>AkunCustomer">
+            <i class="fa fa-calendar text-yellow"></i> <span>Akun Customer</span>
+            <span class="pull-right-container">
+            </span>
+          </a>
+        </li>
+        <li>
+          <a href="<?php echo base_url(); ?>Pemesanan">
             <i class="fa fa-user-plus text-yellow"></i> <span>Pemesanan</span>
             <span class="pull-right-container">
             </span>
           </a>
         </li>
         <li>
-          <a href="<?php echo base_url(); ?>admin/pembelian">
+          <a href="<?php echo base_url(); ?>Pembelian">
             <i class="fa fa-user-plus text-yellow"></i> <span>Pembelian</span>
             <span class="pull-right-container">
             </span>
           </a>
         </li>
         <li>
-          <a href="<?php echo base_url(); ?>admin/data_barang">
+          <a href="<?php echo base_url(); ?>DataBarang">
             <i class="fa fa-newspaper-o text-yellow"></i> <span>Data Barang</span>
             <span class="pull-right-container">
             </span>
@@ -34,7 +48,7 @@
           </a>
         </li>
         <li>
-          <a href="<?php echo base_url(); ?>admin/jenis_cetak">
+          <a href="<?php echo base_url(); ?>JenisCetak">
             <i class="fa fa-file-text-o text-yellow"></i> <span>Jenis Cetak</span>
             <span class="pull-right-container">
             </span>
