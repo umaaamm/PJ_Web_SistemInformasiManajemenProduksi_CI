@@ -59,21 +59,23 @@
 								<th>Pilihan</th>
 							</tr>
 						</thead>
-						<?php
-							$a=1;
-								foreach ($data->result_array() as $key) {
-							?>
+						<tbody>
+							<?php
+								$a=1;
+									foreach ($data->result_array() as $key) {
+								?>
 							<tr>
-							<td><?php echo $a; ?></td>
-							<td><?php echo $key["nama_supplier"];?></td>
-	            <td><?php echo $key["supplier_barang"];?></td>
-							<td><?php echo $key["telpon"];?></td>
-							<td align="center">
-								<a href="#modal-edit-data-supplier" data-toggle="modal" class="btn btn-warning btn-sm"><i class="mdi mdi-plus-circle mr-2 fa fa-pencil"></i></a>
-								<button class="btn btn-danger btn-sm" onclick="hapus('<?php echo $key["id_supplier"]; ?>')"><i class="mdi mdi-plus-circle mr-2 fa fa-close"></i></button>
-							</td>
-						</tr>
-					<?php $a++; } ?>
+								<td><?php echo $a; ?></td>
+								<td><?php echo $key["nama_supplier"];?></td>
+			          <td><?php echo $key["supplier_barang"];?></td>
+								<td><?php echo $key["telpon"];?></td>
+								<td align="center">
+									<a href="#modal-edit-data-supplier" data-toggle="modal" class="btn btn-warning btn-sm"><i class="mdi mdi-plus-circle mr-2 fa fa-pencil"></i></a>
+									<button class="btn btn-danger btn-sm" onclick="hapus('<?php echo $key["id_supplier"]; ?>')"><i class="mdi mdi-plus-circle mr-2 fa fa-close"></i></button>
+								</td>
+							</tr>
+						<?php $a++; } ?>
+						</tbody>
 					</table>
 				</div>
 				<!-- /.box-body -->

@@ -49,20 +49,32 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 | Examples:	my-controller/index	-> my_controller/index
 |		my-controller/my-method	-> my_controller/my_method
 */
-$route['default_controller'] = 'admin';
+$route['default_controller'] = 'Admin';
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
-$route['Supplier'] = 'ControllerSupplier';
-$route['SimpanSupplier'] = 'ControllerSupplier/simpan';
-$route['JenisCetak'] = 'ControllerJenisCetak';
-$route['SimpanJenisCetak'] = 'ControllerJenisCetak/simpan';
-$route['DataBarang'] = 'ControllerDataBarang';
-$route['SimpanDataBarang'] = 'ControllerDataBarang/simpan';
-$route['Pembelian'] = 'ControllerPembelian';
-$route['SimpanPembelian'] = 'ControllerPembelian/simpan';
-$route['Pemesanan'] = 'ControllerPemesanan';
-$route['SimpanPemesanan'] = 'ControllerPemesanan/simpan';
-$route['AkunAdmin'] = 'ControllerAkunAdmin';
-$route['SimpanAkunAdmin'] = 'ControllerAkunAdmin/simpan';
-$route['AkunCustomer'] = 'ControllerAkunCustomer';
-$route['SimpanAkunCustomer'] = 'ControllerAkunCustomer/simpan';
+
+/* Halaman Admin */
+$route['Admin/Supplier'] = 'ControllerSupplier';
+$route['Admin/SimpanSupplier'] = 'ControllerSupplier/simpan';
+
+$route['Admin/JenisCetak'] = 'ControllerJenisCetak';
+$route['Admin/SimpanJenisCetak'] = 'ControllerJenisCetak/simpan';
+
+$route['Admin/DataBarang'] = 'ControllerDataBarang';
+$route['Admin/SimpanDataBarang'] = 'ControllerDataBarang/simpan';
+
+$route['Admin/Pembelian'] = 'ControllerPembelian';
+$route['Admin/SimpanPembelian'] = 'ControllerPembelian/simpan';
+
+$route['Admin/Pemesanan'] = 'ControllerPemesanan';
+$route['Admin/SimpanPemesanan'] = 'ControllerPemesanan/simpan';
+
+$route['Admin/AkunAdmin'] = 'ControllerAkunAdmin';
+$route['Admin/SimpanAkunAdmin'] = 'ControllerAkunAdmin/simpan';
+
+$route['Admin/AkunCustomer'] = 'ControllerAkunCustomer';
+$route['Admin/SimpanAkunCustomer'] = 'ControllerAkunCustomer/simpan';
+
+/* Halaman Customer */
+$route['Customer/Pesanan'] = 'ControllerPesanan';
+$route['Customer/SimpanPesanan'] = 'ControllerPesanan/simpan';

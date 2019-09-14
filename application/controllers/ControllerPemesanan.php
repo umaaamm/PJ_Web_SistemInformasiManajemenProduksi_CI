@@ -38,7 +38,7 @@ class ControllerPemesanan extends CI_Controller {
 		//print_r($data);die;
 		$this->RsModel->TambahData("tbl_supplier",$data);
 		$this->session->set_flashdata("notif","<div class='alert alert-success'><i class='fa fa-check'></i> Data berhasil ditambah</div>");
-		header('location:'.base_url().'Supplier');
+		header('location:'.base_url().'Admin/Supplier');
 	}
 
 	public function hapus(){
@@ -46,7 +46,7 @@ class ControllerPemesanan extends CI_Controller {
 		$where=array('id_supplier'=>$id);
 		$this->RsModel->HapusData('tbl_supplier',$where);
 		$this->session->set_flashdata("notif","<div class='alert alert-danger'><i class='fa fa-trash'></i> Data berhasil dihapus</div>");
-		header('location:'.base_url().'Supplier');
+		header('location:'.base_url().'Admin/Supplier');
 	}
 
 	public function edit(){
@@ -60,7 +60,7 @@ class ControllerPemesanan extends CI_Controller {
 		//print_r($where);die;
 		$this->RsModel->EditData("tbl_admin",$data,$where);
 		$this->session->set_flashdata("notif","<div class='alert alert-warning'><i class='fa fa-pencil'></i> Data berhasil diedit</div>");
-		header('location:'.base_url().'KelolaAdmin');
+		header('location:'.base_url().'Admin/KelolaAdmin');
 
 	}
 

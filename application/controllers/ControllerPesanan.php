@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class ControllerAkunAdmin extends CI_Controller {
+class ControllerPesanan extends CI_Controller {
 
 	/**
 	 * Index Page for this controller.
@@ -21,11 +21,11 @@ class ControllerAkunAdmin extends CI_Controller {
 	public function index()
 	{
 
-		$data['data'] = $this->db->query('select * from tbl_data_barang');
+		$data['data'] = $this->db->query('select * from tbl_supplier');
 		$data['header'] = 'master/header';
-		$data['sidebar'] = 'master/aside';
+		$data['sidebar'] = 'master/customer_aside';
 		$data['footer']= 'master/footer';
-		$data['content']= 'admin/akun_admin';
+		$data['content']= 'customer/pesanan';
 
 
 		$this->load->view('master/data_master',$data);

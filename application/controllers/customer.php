@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class customer extends CI_Controller {
+class Customer extends CI_Controller {
 
 	public function __construct()
 	{
@@ -12,9 +12,11 @@ class customer extends CI_Controller {
 
 	public function index()
 	{
-		$this->load->view('customer/header');
-		$this->load->view('customer/aside');
-		$this->load->view('customer/pesanan');
-		$this->load->view('footer');
+		$data['data'] = $this->db->query('select * from tbl_supplier');
+		$data['header'] = 'master/header';
+		$data['sidebar'] = 'master/customer_aside';
+		$data['footer']= 'master/footer';
+		$data['content']= 'customer/pesanan';
+		$this->load->view('master/data_master',$data);
 	}
 }
