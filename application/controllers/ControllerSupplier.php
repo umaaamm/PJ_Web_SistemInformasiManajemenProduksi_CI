@@ -20,7 +20,7 @@ class ControllerSupplier extends CI_Controller {
 	 */
 	public function index()
 	{
-		
+
 		$data['data'] = $this->db->query('select * from tbl_supplier');
 		$data['header'] = 'master/header';
 		$data['sidebar'] = 'master/aside';
@@ -32,35 +32,35 @@ class ControllerSupplier extends CI_Controller {
 	}
 
 	public function simpan(){
-			$data['nama_supplier']=$this->input->post("supplier");
-			$data['supplier_barang']=$this->input->post("barang");
-			$data['telpon']=$this->input->post("nohp");
-			//print_r($data);die;
-			$this->RsModel->TambahData("tbl_supplier",$data);
-			$this->session->set_flashdata("notif","<div class='alert alert-success'>Data berhasil ditambah</div>");
-			header('location:'.base_url().'Supplier');
+		$data['nama_supplier']=$this->input->post("supplier");
+		$data['supplier_barang']=$this->input->post("barang");
+		$data['telpon']=$this->input->post("nohp");
+		//print_r($data);die;
+		$this->RsModel->TambahData("tbl_supplier",$data);
+		$this->session->set_flashdata("notif","<div class='alert alert-success'><i class='fa fa-check'></i> Data berhasil ditambah</div>");
+		header('location:'.base_url().'Supplier');
 	}
 
 	public function hapus(){
 		$id=$this->uri->segment(3);
 		$where=array('id_supplier'=>$id);
 		$this->RsModel->HapusData('tbl_supplier',$where);
-		$this->session->set_flashdata("notif","<div class='alert alert-success'>Data berhasil dihapus</div>");
+		$this->session->set_flashdata("notif","<div class='alert alert-danger'><i class='fa fa-trash'></i> Data berhasil dihapus</div>");
 		header('location:'.base_url().'Supplier');
 	}
 
 	public function edit(){
-			$where['id_admin']=$this->input->post('id');
-			$data['username']=$this->input->post("user");
-			$data['password']=$this->input->post("pass");
-			$data['nama']=$this->input->post("nama");
-			$data['email']=$this->input->post("email");
-			$data['bagian']=$this->input->post("bagian");
-			$data['level']=$this->input->post("level");
-			//print_r($where);die;
-			$this->RsModel->EditData("tbl_admin",$data,$where);
-			$this->session->set_flashdata("notif","<div class='alert alert-success'>Data berhasil diedit</div>");
-			header('location:'.base_url().'KelolaAdmin');
+		$where['id_admin']=$this->input->post('id');
+		$data['username']=$this->input->post("user");
+		$data['password']=$this->input->post("pass");
+		$data['nama']=$this->input->post("nama");
+		$data['email']=$this->input->post("email");
+		$data['bagian']=$this->input->post("bagian");
+		$data['level']=$this->input->post("level");
+		//print_r($where);die;
+		$this->RsModel->EditData("tbl_admin",$data,$where);
+		$this->session->set_flashdata("notif","<div class='alert alert-warning'><i class='fa fa-pencil'></i> Data berhasil diedit</div>");
+		header('location:'.base_url().'KelolaAdmin');
 
 	}
 
