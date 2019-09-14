@@ -32,21 +32,25 @@ class ControllerJenisCetak extends CI_Controller {
 	}
 
 	public function simpan(){
-		$data['nama_supplier']=$this->input->post("supplier");
-		$data['supplier_barang']=$this->input->post("barang");
-		$data['telpon']=$this->input->post("nohp");
+		$data['nama_jenis_cetak']=$this->input->post("jenis_cetak");
+		$data['jenis_kertas']=$this->input->post("jenis_kertas");
+		$data['ukuran_kertas']=$this->input->post("ukuran");
+		$data['tinta']=$this->input->post("tinta");
+		$data['harga']=$this->input->post("harga");
+
+
 		//print_r($data);die;
-		$this->RsModel->TambahData("tbl_supplier",$data);
+		$this->RsModel->TambahData("tbl_jenis_cetak",$data);
 		$this->session->set_flashdata("notif","<div class='alert alert-success'><i class='fa fa-check'></i> Data berhasil ditambah</div>");
-		header('location:'.base_url().'Admin/Supplier');
+		header('location:'.base_url().'Admin/JenisCetak');
 	}
 
 	public function hapus(){
 		$id=$this->uri->segment(3);
-		$where=array('id_supplier'=>$id);
-		$this->RsModel->HapusData('tbl_supplier',$where);
+		$where=array('id_jenisc'=>$id);
+		$this->RsModel->HapusData('tbl_jenis_cetak',$where);
 		$this->session->set_flashdata("notif","<div class='alert alert-danger'><i class='fa fa-trash'></i> Data berhasil dihapus</div>");
-		header('location:'.base_url().'Admin/Supplier');
+		header('location:'.base_url().'Admin/JenisCetak');
 	}
 
 	public function edit(){

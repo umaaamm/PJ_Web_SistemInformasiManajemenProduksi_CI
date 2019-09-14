@@ -11,19 +11,20 @@
 				<div class="box-body">
 					<div class="container">
 						<div class="row">
+							<form class="form-horizontal" method="post" action="SimpanDataBarang">
 							<div class="col-md-5">
-								<form class="form-horizontal">
+								
 								 <div class="box-body">
-									 <div class="form-group">
+								<!-- 	 <div class="form-group">
 										 <label for="" class="col-sm-4 control-label">Kode</label>
 										 <div class="col-sm-7">
 											 <input type="text" class="form-control" name="kode" placeholder="Kode">
 										 </div>
-									 </div>
+									 </div> -->
 									 <div class="form-group">
 										 <label for="" class="col-sm-4 control-label">Barang</label>
 										 <div class="col-sm-7">
-											 <input type="text" class="form-control" name="nama" placeholder="Barang">
+											 <input type="text" class="form-control" name="barang" placeholder="Barang">
 										 </div>
 									 </div>
 									 <div class="form-group">
@@ -34,10 +35,10 @@
 									 </div>
 								 </div>
 								 <!-- /.box-body -->
-								</form>
+								
 							</div>
 							<div class="col-md-5">
-								<form class="form-horizontal">
+								
 								 <div class="box-body">
 									 <div class="form-group">
 										 <label for="" class="col-sm-4 control-label">Harga</label>
@@ -45,19 +46,34 @@
 											 <input type="text" class="form-control" name="harga" placeholder="Harga">
 										 </div>
 									 </div>
-									 <div class="form-group">
+									<!--  <div class="form-group">
 										 <label for="" class="col-sm-4 control-label">Supplier</label>
 										 <div class="col-sm-7">
 											 <input type="text" class="form-control" name="supplier" placeholder="Supplier">
 										 </div>
-									 </div>
+									 </div> -->
+									  <div class="form-group">
+                                             <label for="" class="col-sm-4 control-label">Supplier</label>
+                                              <div class="col-sm-7">
+                                            <select class="form-control" name="id_supplier">
+                                                <option value="-">-- Nama Supplier --</option>
+                                              <?php foreach($data_supplier->result_array() as $keyy)
+                                              {
+                                                ?>
+                                                    
+                                                    <option value="<?php echo $keyy['id_supplier'];?>"><?php echo $keyy['nama_supplier'];?></option>
+                                                <?php } ?>
+                                            </select>
+                                        </div>
+                                        </div>
 								 </div>
 								 <!-- /.box-body -->
-								</form>
+						
 							</div>
 						</div>
 					</div>
-					<a href="#" class="btn btn-info btn-block"><i class="fa fa-save"></i> Simpan</a>
+					<button type="submit" class="btn btn-info btn-block"><i class="fa fa-save"></i> Simpan</button>
+					</form>
 				</div>
 			</div>
 
@@ -67,7 +83,6 @@
 						<thead>
 						<tr>
 							<th>No</th>
-							<th>Kode</th>
 							<th>Barang</th>
 							<th>Jenis</th>
 							<th>Harga</th>
@@ -76,18 +91,23 @@
 						</tr>
 						</thead>
 						<tbody>
-						<tr>
-							<td>1</td>
-							<td></td>
-							<td></td>
-							<td></td>
-							<td></td>
-							<td></td>
-							<td align="center">
-								<a href="#modal-edit-data-barang" data-toggle="modal" class="btn btn-warning btn-sm"><i class="mdi mdi-plus-circle mr-2 fa fa-pencil"></i></a>
-								<a href="#" class="btn btn-danger btn-sm"><i class="mdi mdi-plus-circle mr-2 fa fa-close"></i></a>
-							</td>
-						</tr>
+							<?php
+								$a=1;
+									foreach ($data->result_array() as $key) {
+								?>
+							<tr>
+								<td><?php echo $a; ?></td>
+								<td><?php echo $key["nama_barang"];?></td>
+			          			<td><?php echo $key["jenis_barang"];?></td>
+								<td><?php echo $key["harga_barang"];?></td>
+								<td><?php echo $key["id_supplier"];?></td>
+								<td align="center">
+									<a href="#modal-edit-data-supplier" data-toggle="modal" class="btn btn-warning btn-sm"><i class="mdi mdi-plus-circle mr-2 fa fa-pencil"></i></a>
+									<button class="btn btn-danger btn-sm" onclick="hapus('<?php echo $key["id_barang"]; ?>')"><i class="mdi mdi-plus-circle mr-2 fa fa-close"></i></button>
+								</td>
+							</tr>
+						<?php $a++; } ?>
+						</tbody>
 					</table>
 				</div>
 				<!-- /.box-body -->
@@ -143,3 +163,13 @@
 	<!-- /.modal-dialog -->
 </div>
 <!-- /.modal -->
+
+<script type="text/javascript">
+function hapus($id){
+	var	conf=window.confirm('Data Akan Dihapus ?');
+	if (conf) {
+		document.location='<?php echo base_url(); ?>ControllerDataBarang/hapus/'+$id;
+	}
+}
+
+</script>

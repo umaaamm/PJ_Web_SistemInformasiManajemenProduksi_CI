@@ -76,5 +76,5 @@ $route['Admin/AkunCustomer'] = 'ControllerAkunCustomer';
 $route['Admin/SimpanAkunCustomer'] = 'ControllerAkunCustomer/simpan';
 
 /* Halaman Customer */
-$route['Customer/Pesanan'] = 'ControllerPesanan';
-$route['Customer/SimpanPesanan'] = 'ControllerPesanan/simpan';
+// $route['Customer/Pesanan'] = 'ControllerPesanan';
+// $route['Customer/SimpanPesanan'] = 'ControllerPesanan/simpan';

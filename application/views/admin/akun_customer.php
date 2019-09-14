@@ -12,7 +12,7 @@
 					<div class="container">
 						<div class="row">
 							<div class="col-md-5">
-								<form class="form-horizontal">
+								<form class="form-horizontal" method="post" action="SimpanAkunCustomer">
 								 <div class="box-body">
 									 <!-- <div class="form-group">
 										 <label for="" class="col-sm-4 control-label">Kode</label>
@@ -35,10 +35,10 @@
 
 								 </div>
 								 <!-- /.box-body -->
-								</form>
+							
 							</div>
 							<div class="col-md-5">
-								<form class="form-horizontal">
+								
 								 <div class="box-body">
 									 <div class="form-group">
 									 	  <label for="" class="col-sm-4 control-label">Email</label>
@@ -60,11 +60,12 @@
 									 </div> -->
 								 </div>
 								 <!-- /.box-body -->
-								</form>
+								
 							</div>
 						</div>
 					</div>
-					<a href="#" class="btn btn-info btn-block"><i class="fa fa-save"></i> Simpan</a>
+					<button type="submit" class="btn btn-info btn-block"><i class="fa fa-save"></i> Simpan</button>
+					</form>
 				</div>
 			</div>
 
@@ -83,18 +84,24 @@
 						</tr>
 						</thead>
 						<tbody>
-						<tr>
-							<td>1</td>
-							<td></td>
-							<td></td>
-							<td></td>
-							<td></td>
-							<td></td>
-							<td align="center">
-								<a href="#modal-edit-akun-customer" data-toggle="modal" class="btn btn-warning btn-sm"><i class="mdi mdi-plus-circle mr-2 fa fa-pencil"></i></a>
-								<a href="#" class="btn btn-danger btn-sm"><i class="mdi mdi-plus-circle mr-2 fa fa-close"></i></a>
-							</td>
-						</tr>
+							<?php
+								$a=1;
+									foreach ($data->result_array() as $key) {
+								?>
+							<tr>
+								<td><?php echo $a; ?></td>
+								<td><?php echo $key["nama"];?></td>
+			          			<td><?php echo $key["username"];?></td>
+								<td><?php echo $key["password"];?></td>
+								<td><?php echo $key["email"];?></td>
+								<td><?php echo $key["level"];?></td>
+								<td align="center">
+									<a href="#modal-edit-data-supplier" data-toggle="modal" class="btn btn-warning btn-sm"><i class="mdi mdi-plus-circle mr-2 fa fa-pencil"></i></a>
+									<button class="btn btn-danger btn-sm" onclick="hapus('<?php echo $key["id_user"]; ?>')"><i class="mdi mdi-plus-circle mr-2 fa fa-close"></i></button>
+								</td>
+							</tr>
+						<?php $a++; } ?>
+						</tbody>
 					</table>
 				</div>
 				<!-- /.box-body -->
@@ -156,3 +163,14 @@
 	<!-- /.modal-dialog -->
 </div>
 <!-- /.modal -->
+
+
+<script type="text/javascript">
+function hapus($id){
+	var	conf=window.confirm('Data Akan Dihapus ?');
+	if (conf) {
+		document.location='<?php echo base_url(); ?>ControllerAkunCustomer/hapus/'+$id;
+	}
+}
+
+</script>

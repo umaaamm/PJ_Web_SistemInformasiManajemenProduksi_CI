@@ -11,35 +11,51 @@
 				<div class="box-body">
 					<div class="container">
 						<div class="row">
+							<form class="form-horizontal" method="post" action="SimpanPembelian">
 							<div class="col-md-5">
-								<form class="form-horizontal">
+								
 								 <div class="box-body">
-									 <div class="form-group">
+								 	 <div class="form-group">
+                                             <label for="" class="col-sm-4 control-label">Nama Barang</label>
+                                              <div class="col-sm-7">
+                                            <select class="form-control" name="id_barang">
+                                                <option value="-">-- Nama Barang --</option>
+                                              <?php foreach($data_barang->result_array() as $keyy)
+                                              {
+                                                ?>
+                                                    
+                                                    <option value="<?php echo $keyy['id_barang'];?>"><?php echo $keyy['nama_barang'];?></option>
+                                                <?php } ?>
+                                            </select>
+                                        </div>
+                                        </div>
+									 <!-- <div class="form-group">
 										 <label for="" class="col-sm-4 control-label">Barang</label>
 										 <div class="col-sm-7">
-											 <input type="text" class="form-control" id="" placeholder="Barang">
+											 <input type="text" class="form-control" i placeholder="Barang">
 										 </div>
-									 </div>
+									 </div> -->
 								 </div>
 								 <!-- /.box-body -->
-								</form>
+								
 							</div>
 							<div class="col-md-5">
-								<form class="form-horizontal">
+								
 								 <div class="box-body">
 									 <div class="form-group">
 										 <label for="" class="col-sm-4 control-label">Stok</label>
 										 <div class="col-sm-7">
-											 <input type="text" class="form-control" id="" placeholder="Stok">
+											 <input type="text" class="form-control" name="stok" placeholder="Stok">
 										 </div>
 									 </div>
 								 </div>
 								 <!-- /.box-body -->
-								</form>
+								
 							</div>
 						</div>
 					</div>
-					<a href="#" class="btn btn-info btn-block"><i class="fa fa-save"></i> Simpan</a>
+					<button type="submit" class="btn btn-info btn-block"><i class="fa fa-save"></i> Simpan</button>
+					</form>
 				</div>
 			</div>
 
@@ -49,13 +65,13 @@
 						<thead>
 						<tr>
 							<th>No</th>
-							<th>Kode</th>
+							
 							<th>Barang</th>
 							<th>Stok</th>
 							<th>Pilihan</th>
 						</tr>
 						</thead>
-						<tbody>
+						<!-- <tbody>
 						<tr>
 							<td>1</td>
 							<td></td>
@@ -65,7 +81,25 @@
 								<a href="#modal-edit-data-pembelian" data-toggle="modal" class="btn btn-warning btn-sm"><i class="mdi mdi-plus-circle mr-2 fa fa-pencil"></i></a>
 								<a href="#" class="btn btn-danger btn-sm"><i class="mdi mdi-plus-circle mr-2 fa fa-close"></i></a>
 							</td>
-						</tr>
+						</tr> -->
+
+						<tbody>
+							<?php
+								$a=1;
+									foreach ($data->result_array() as $key) {
+								?>
+							<tr>
+								<td><?php echo $a; ?></td>
+								<td><?php echo $key["id_barang"];?></td>
+			          			<td><?php echo $key["stok"];?></td>
+								
+								<td align="center">
+									<a href="#modal-edit-data-supplier" data-toggle="modal" class="btn btn-warning btn-sm"><i class="mdi mdi-plus-circle mr-2 fa fa-pencil"></i></a>
+									<button class="btn btn-danger btn-sm" onclick="hapus('<?php echo $key["id_data_pembelian"]; ?>')"><i class="mdi mdi-plus-circle mr-2 fa fa-close"></i></button>
+								</td>
+							</tr>
+						<?php $a++; } ?>
+						</tbody>
 					</table>
 				</div>
 				<!-- /.box-body -->
@@ -109,3 +143,12 @@
 	<!-- /.modal-dialog -->
 </div>
 <!-- /.modal -->
+<script type="text/javascript">
+function hapus($id){
+	var	conf=window.confirm('Data Akan Dihapus ?');
+	if (conf) {
+		document.location='<?php echo base_url(); ?>ControllerPembelian/hapus/'+$id;
+	}
+}
+
+</script>

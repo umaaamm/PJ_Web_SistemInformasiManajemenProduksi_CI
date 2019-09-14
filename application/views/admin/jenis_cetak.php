@@ -11,25 +11,25 @@
 				<div class="box-body">
 					<div class="container">
 						<div class="row">
-							<form class="form-horizontal" action="SimpanSupplier" method="post">
+							<form class="form-horizontal" action="SimpanJenisCetak" method="post">
 								<div class="col-md-5">
 									<form class="form-horizontal">
 									 <div class="box-body">
 										 <div class="form-group">
 											 <label for="" class="col-sm-4 control-label">Jenis Cetak</label>
 											 <div class="col-sm-7">
-												 <input type="text" class="form-control" id="" placeholder="Jenis Cetak">
+												 <input type="text" class="form-control" name="jenis_cetak" placeholder="Jenis Cetak">
 											 </div>
 										 </div>
 										 <div class="form-group">
 											 <label for="" class="col-sm-4 control-label">Jenis Kertas</label>
 											 <div class="col-sm-7">
-												 <input type="text" class="form-control" id="" placeholder="Jenis Kertas">
+												 <input type="text" class="form-control" name="jenis_kertas" placeholder="Jenis Kertas">
 											 </div>
 										 </div>
 									 </div>
 									 <!-- /.box-body -->
-									</form>
+									
 								</div>
 								<div class="col-md-5">
 									<form class="form-horizontal">
@@ -37,29 +37,30 @@
 										 <div class="form-group">
 											 <label for="" class="col-sm-4 control-label">Ukuran</label>
 											 <div class="col-sm-7">
-												 <input type="text" class="form-control" id="" placeholder="Ukuran">
+												 <input type="text" class="form-control" name="ukuran" placeholder="Ukuran">
 											 </div>
 										 </div>
 										 <div class="form-group">
 											 <label for="" class="col-sm-4 control-label">Tinta</label>
 											 <div class="col-sm-7">
-												 <input type="text" class="form-control" id="" placeholder="Tinta">
+												 <input type="text" class="form-control" name="tinta" placeholder="Tinta">
 											 </div>
 										 </div>
 										 <div class="form-group">
 											 <label for="" class="col-sm-4 control-label">Harga</label>
 											 <div class="col-sm-7">
-												 <input type="text" class="form-control" id="" placeholder="Harga">
+												 <input type="text" class="form-control" name="harga" placeholder="Harga">
 											 </div>
 										 </div>
 									 </div>
 									 <!-- /.box-body -->
-									</form>
+									
 								</div>
-							</form>
+						
 						</div>
 					</div>
-					<a href="#" class="btn btn-info btn-block"><i class="fa fa-save"></i> Simpan</a>
+					<button type="submit" class="btn btn-info btn-block"><i class="fa fa-save"></i> Simpan</button>
+					</form>
 				</div>
 			</div>
 
@@ -69,7 +70,7 @@
 						<thead>
 						<tr>
 							<th>No</th>
-							<th>Kode</th>
+							<!-- <th>Kode</th> -->
 							<th>Jenis Cetak</th>
 							<th>Jenis Kertas</th>
 							<th>Ukuran</th>
@@ -78,8 +79,8 @@
 							<th>Pilihan</th>
 						</tr>
 						</thead>
-						<tbody>
-						<tr>
+						<!-- <tbody> -->
+						<!-- <tr>
 							<td>1</td>
 							<td></td>
 							<td></td>
@@ -91,7 +92,27 @@
 								<a href="#modal-edit-data-jenis-cetak" data-toggle="modal" class="btn btn-warning btn-sm"><i class="mdi mdi-plus-circle mr-2 fa fa-pencil"></i></a>
 								<a href="#" class="btn btn-danger btn-sm"><i class="mdi mdi-plus-circle mr-2 fa fa-close"></i></a>
 							</td>
-						</tr>
+						</tr> -->
+						<tbody>
+							<?php
+								$a=1;
+									foreach ($data->result_array() as $key) {
+								?>
+							<tr>
+								<td><?php echo $a; ?></td>
+								<td><?php echo $key["nama_jenis_cetak"];?></td>
+			          			<td><?php echo $key["jenis_kertas"];?></td>
+			          			<td><?php echo $key["ukuran_kertas"];?></td>
+			          			<td><?php echo $key["tinta"];?></td>
+			          			<td><?php echo $key["harga"];?></td>
+								
+								<td align="center">
+									<a href="#modal-edit-data-supplier" data-toggle="modal" class="btn btn-warning btn-sm"><i class="mdi mdi-plus-circle mr-2 fa fa-pencil"></i></a>
+									<button class="btn btn-danger btn-sm" onclick="hapus('<?php echo $key["id_jenisc"]; ?>')"><i class="mdi mdi-plus-circle mr-2 fa fa-close"></i></button>
+								</td>
+							</tr>
+						<?php $a++; } ?>
+						</tbody>
 					</table>
 				</div>
 				<!-- /.box-body -->
@@ -153,3 +174,12 @@
 	<!-- /.modal-dialog -->
 </div>
 <!-- /.modal -->
+<script type="text/javascript">
+function hapus($id){
+	var	conf=window.confirm('Data Akan Dihapus ?');
+	if (conf) {
+		document.location='<?php echo base_url(); ?>ControllerJenisCetak/hapus/'+$id;
+	}
+}
+
+</script>

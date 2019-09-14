@@ -21,7 +21,9 @@ class ControllerDataBarang extends CI_Controller {
 	public function index()
 	{
 
-		$data['data'] = $this->db->query('select * from tbl_data_barang');
+		$data['data'] = $this->db->query('select * from tbl_databarang');
+		$data['data_supplier'] = $this->db->query('select * from tbl_supplier');
+
 		$data['header'] = 'master/header';
 		$data['sidebar'] = 'master/aside';
 		$data['footer']= 'master/footer';
@@ -32,21 +34,22 @@ class ControllerDataBarang extends CI_Controller {
 	}
 
 	public function simpan(){
-		$data['nama_supplier']=$this->input->post("supplier");
-		$data['supplier_barang']=$this->input->post("barang");
-		$data['telpon']=$this->input->post("nohp");
+		$data['nama_barang']=$this->input->post("barang");
+		$data['jenis_barang']=$this->input->post("jenis");
+		$data['harga_barang']=$this->input->post("harga");
+		$data['id_supplier']=$this->input->post("id_supplier");
 		//print_r($data);die;
-		$this->RsModel->TambahData("tbl_supplier",$data);
+		$this->RsModel->TambahData("tbl_databarang",$data);
 		$this->session->set_flashdata("notif","<div class='alert alert-success'><i class='fa fa-check'></i> Data berhasil ditambah</div>");
-		header('location:'.base_url().'Admin/Supplier');
+		header('location:'.base_url().'Admin/DataBarang');
 	}
 
 	public function hapus(){
 		$id=$this->uri->segment(3);
-		$where=array('id_supplier'=>$id);
-		$this->RsModel->HapusData('tbl_supplier',$where);
+		$where=array('id_barang'=>$id);
+		$this->RsModel->HapusData('tbl_databarang',$where);
 		$this->session->set_flashdata("notif","<div class='alert alert-danger'><i class='fa fa-trash'></i> Data berhasil dihapus</div>");
-		header('location:'.base_url().'Admin/Supplier');
+		header('location:'.base_url().'Admin/DataBarang');
 	}
 
 	public function edit(){
