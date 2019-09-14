@@ -12,7 +12,7 @@ class Admin extends CI_Controller {
 
 	public function index()
 	{
-		$data['data'] = $this->db->query('select * from tbl_supplier');
+		$data['data'] = $this->db->query('select * from tbl_admin');
 		$data['header'] = 'master/header';
 		$data['sidebar'] = 'master/aside';
 		$data['footer']= 'master/footer';
