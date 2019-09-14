@@ -122,6 +122,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 				autoclose: true
 			})
 
+			$('#datepicker-edit-data-pemesan').datepicker({
+				autoclose: true
+			})
+
 			$('#dt-list-pemesan').DataTable({
 				'paging'      : true,
 				'lengthChange': true,
