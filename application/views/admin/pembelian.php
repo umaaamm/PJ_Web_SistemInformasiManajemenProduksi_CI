@@ -13,22 +13,19 @@
 						<div class="row">
 							<form class="form-horizontal" method="post" action="SimpanPembelian">
 							<div class="col-md-5">
-								
+
 								 <div class="box-body">
 								 	 <div class="form-group">
-                                             <label for="" class="col-sm-4 control-label">Nama Barang</label>
-                                              <div class="col-sm-7">
-                                            <select class="form-control" name="id_barang">
-                                                <option value="-">-- Nama Barang --</option>
-                                              <?php foreach($data_barang->result_array() as $keyy)
-                                              {
-                                                ?>
-                                                    
-                                                    <option value="<?php echo $keyy['id_barang'];?>"><?php echo $keyy['nama_barang'];?></option>
-                                                <?php } ?>
-                                            </select>
-                                        </div>
-                                        </div>
+	                    <label for="" class="col-sm-4 control-label">Nama Barang</label>
+                      	<div class="col-sm-7">
+                        <select class="form-control" name="id_barang">
+                        	<option value="-">- Pilih -</option>
+                          	<?php foreach($data_barang->result_array() as $keyy) { ?>
+                          <option value="<?php echo $keyy['id_barang'];?>"><?php echo $keyy['nama_barang'];?></option>
+                            <?php } ?>
+                        </select>
+                    	</div>
+                    </div>
 									 <!-- <div class="form-group">
 										 <label for="" class="col-sm-4 control-label">Barang</label>
 										 <div class="col-sm-7">
@@ -37,10 +34,10 @@
 									 </div> -->
 								 </div>
 								 <!-- /.box-body -->
-								
+
 							</div>
 							<div class="col-md-5">
-								
+
 								 <div class="box-body">
 									 <div class="form-group">
 										 <label for="" class="col-sm-4 control-label">Stok</label>
@@ -50,7 +47,7 @@
 									 </div>
 								 </div>
 								 <!-- /.box-body -->
-								
+
 							</div>
 						</div>
 					</div>
@@ -65,7 +62,7 @@
 						<thead>
 						<tr>
 							<th>No</th>
-							
+
 							<th>Barang</th>
 							<th>Stok</th>
 							<th>Pilihan</th>
@@ -92,7 +89,7 @@
 								<td><?php echo $a; ?></td>
 								<td><?php echo $key["id_barang"];?></td>
 			          			<td><?php echo $key["stok"];?></td>
-								
+
 								<td align="center">
 									<a href="#modal-edit-data-supplier" data-toggle="modal" class="btn btn-warning btn-sm"><i class="mdi mdi-plus-circle mr-2 fa fa-pencil"></i></a>
 									<button class="btn btn-danger btn-sm" onclick="hapus('<?php echo $key["id_data_pembelian"]; ?>')"><i class="mdi mdi-plus-circle mr-2 fa fa-close"></i></button>

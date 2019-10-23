@@ -13,7 +13,7 @@
 						<div class="row">
 							<form class="form-horizontal" method="post" action="SimpanDataBarang">
 							<div class="col-md-5">
-								
+
 								 <div class="box-body">
 								<!-- 	 <div class="form-group">
 										 <label for="" class="col-sm-4 control-label">Kode</label>
@@ -35,10 +35,10 @@
 									 </div>
 								 </div>
 								 <!-- /.box-body -->
-								
+
 							</div>
 							<div class="col-md-5">
-								
+
 								 <div class="box-body">
 									 <div class="form-group">
 										 <label for="" class="col-sm-4 control-label">Harga</label>
@@ -53,22 +53,18 @@
 										 </div>
 									 </div> -->
 									  <div class="form-group">
-                                             <label for="" class="col-sm-4 control-label">Supplier</label>
-                                              <div class="col-sm-7">
-                                            <select class="form-control" name="id_supplier">
-                                                <option value="-">-- Nama Supplier --</option>
-                                              <?php foreach($data_supplier->result_array() as $keyy)
-                                              {
-                                                ?>
-                                                    
-                                                    <option value="<?php echo $keyy['id_supplier'];?>"><?php echo $keyy['nama_supplier'];?></option>
-                                                <?php } ?>
-                                            </select>
-                                        </div>
-                                        </div>
+                    	<label for="" class="col-sm-4 control-label">Supplier</label>
+                      <div class="col-sm-7">
+                        <select class="form-control" name="id_supplier">
+	                        <option value="-">- Pilih -</option>
+                          <?php foreach($data_supplier->result_array() as $keyy) {?>
+                          <option value="<?php echo $keyy['id_supplier'];?>"><?php echo $keyy['nama_supplier'];?></option>
+                          <?php } ?>
+                        </select>
+                    	</div>
+                    </div>
 								 </div>
 								 <!-- /.box-body -->
-						
 							</div>
 						</div>
 					</div>

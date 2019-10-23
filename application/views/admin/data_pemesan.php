@@ -13,7 +13,7 @@
 						<div class="row">
 							<form class="form-horizontal" method="post" action="SimpanPemesanan">
 							<div class="col-md-5">
-								
+
 								 <div class="box-body">
 									<!--  <div class="form-group">
 										 <label for="" class="col-sm-4 control-label">Kode</label>
@@ -38,43 +38,49 @@
 											 <input type="text" class="form-control"  placeholder="Jenis Cetak">
 										 </div>
 									 </div> -->
-									 <div class="form-group">
-                                             <label for="" class="col-sm-4 control-label">Jenis Cetak</label>
-                                              <div class="col-sm-7">
-                                            <select class="form-control" name="id_jenisc">
-                                                <option value="-">-- Jenis Cetak --</option>
-                                              <?php foreach($data_cetak->result_array() as $keyy)
-                                              {
-                                                ?>
-                                                    
-                                                    <option value="<?php echo $keyy['id_jenisc'];?>"><?php echo $keyy['nama_jenis_cetak'];?></option>
-                                                <?php } ?>
-                                            </select>
-                                        </div>
-                                        </div>
+									<div class="form-group">
+                  	<label for="" class="col-sm-4 control-label">Jenis Cetak</label>
+                    <div class="col-sm-7">
+                    	<select class="form-control" name="id_jenisc">
+                      		<option value="-">- Pilih -</option>
+                        		<?php foreach($data_cetak->result_array() as $keyy)
+                        			{
+                          	?>
+                          <option value="<?php echo $keyy['id_jenisc'];?>"><?php echo $keyy['nama_jenis_cetak'];?></option>
+                          <?php } ?>
+                      </select>
+	                  </div>
+                  </div>
 									 <div class="form-group">
 										 <label for="" class="col-sm-4 control-label">Jumlah</label>
 										 <div class="col-sm-7">
 											 <input type="text" class="form-control" name="jumlah" placeholder="Jumlah">
 										 </div>
 									 </div>
+									 <div class="form-group">
+										 <label for="" class="col-sm-4 control-label">Berkas</label>
+										 <div class="col-sm-7">
+											 <input type="file" class="form-control" id="" placeholder="Uplaod">
+											 <!-- <textarea name="name" class="form-control" rows="2" cols=""></textarea> -->
+										 </div>
+									 </div>
 								 </div>
 								 <!-- /.box-body -->
-								
+
 							</div>
 							<div class="col-md-5">
-								
+
 								 <div class="box-body">
 									 <div class="form-group">
-										 <label for="" class="col-sm-4 control-label">Harga</label>
+										 <label for="" class="col-sm-4 control-label">Harga (Per-Pcs)</label>
 										 <div class="col-sm-7">
-											 <input type="text" class="form-control" name="harga" placeholder="Harga">
+											 <input type="text" class="form-control" name="harga" placeholder="Harga (Per-Pcs)" disabled>
 										 </div>
 									 </div>
 									 <div class="form-group">
-										 <label for="" class="col-sm-4 control-label">Customer</label>
+										 <label for="" class="col-sm-4 control-label">Nama Customer</label>
 										 <div class="col-sm-7">
-											 <input type="text" class="form-control" name="customer" placeholder="Customer">
+											 <input type="text" class="form-control" name="customer" placeholder="Nama Customer">
 										 </div>
 									 </div>
 									 <div class="form-group">
@@ -84,14 +90,14 @@
 										 </div>
 									 </div>
 									 <div class="form-group">
-										 <label for="" class="col-sm-4 control-label">Status</label>
+										 <label for="" class="col-sm-4 control-label">Alamat</label>
 										 <div class="col-sm-7">
-											 <input type="text" class="form-control" name="status" placeholder="Status">
+											 <textarea name="name" class="form-control" rows="2" cols=""></textarea>
 										 </div>
 									 </div>
 								 </div>
 								 <!-- /.box-body -->
-								
+
 							</div>
 						</div>
 					</div>
@@ -102,63 +108,66 @@
 
 			<div class="box box-primary box-solid">
 				<div class="box-body">
-					<table id="dt-list-pemesan" class="table table-bordered table-striped">
+					<table id="dt-list-pesanan" class="table table-bordered table-striped">
 						<thead>
 						<tr>
 							<th>No</th>
-							<!-- <th>Kode</th> -->
+							<th>Tanggal</th>
 							<th>Jenis Cetak</th>
-							<th>Jenis Kertas</th>
-							<th>Ukuran</th>
-							<th>Tinta</th>
-							<th>Harga</th>
-							<th>Status</th>
+							<th>Jumlah</th>
+							<th>Berkas</th>
+							<th>Harga (Per-Pcs)</th>
+							<th>Nama Customer</th>
+							<th>No. Telp</th>
+							<th>Alamat</th>
+							<th>Status Pesanan</th>
 							<th>Pilihan</th>
 						</tr>
 						</thead>
-						<!-- <tbody>
+						<tbody>
 						<tr>
 							<td>1</td>
 							<td></td>
 							<td></td>
 							<td></td>
+							<td align="center">
+								<a href="#" class="btn btn-warning btn-sm"><i class="mdi mdi-plus-circle mr-2 fa fa-download"></i></a>
+							</td>
 							<td></td>
 							<td></td>
 							<td></td>
 							<td></td>
 							<td align="center">
-								<a href="#modal-edit-data-pemesan" data-toggle="modal" class="btn btn-warning btn-sm"><i class="mdi mdi-plus-circle mr-2 fa fa-pencil"></i></a>
+									<a href="#" class="btn btn-warning btn-sm disabled"><i class="mdi mdi-plus-circle mr-2 fa fa-spinner"></i> Proses</a>
+							</td>
+							<td align="center">
+								<a href="#" class="btn btn-warning btn-sm"><i class="mdi mdi-plus-circle mr-2 fa fa-pencil"></i></a>
 								<a href="#" class="btn btn-danger btn-sm"><i class="mdi mdi-plus-circle mr-2 fa fa-close"></i></a>
 							</td>
-						</tr> -->
-						<tbody>
-							<?php
-								$a=1;
-									foreach ($data->result_array() as $key) {
-								?>
-							<tr>
-								<td><?php echo $a; ?></td>
-								<td><?php echo $key["tanggal"];?></td>
-			          			<td><?php echo $key["jenis_cetak"];?></td>
-			          			<td><?php echo $key["jumlah"];?></td>
-			          			<td><?php echo $key["harga"];?></td>
-			          			<td><?php echo $key["customer"];?></td>
-			          			<td><?php echo $key["telpon"];?></td>
-			          			<td><?php echo $key["status"];?></td>
-								
-								<td align="center">
-									<a href="#modal-edit-data-supplier" data-toggle="modal" class="btn btn-warning btn-sm"><i class="mdi mdi-plus-circle mr-2 fa fa-pencil"></i></a>
-									<button class="btn btn-danger btn-sm" onclick="hapus('<?php echo $key["id_pesanan"]; ?>')"><i class="mdi mdi-plus-circle mr-2 fa fa-close"></i></button>
-								</td>
-							</tr>
-						<?php $a++; } ?>
-						</tbody>
+						</tr>
+						<tr>
+							<td>2</td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td align="center">
+								<a href="#" class="btn btn-warning btn-sm"><i class="mdi mdi-plus-circle mr-2 fa fa-download"></i></a>
+							</td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td align="center">
+								<a href="#" class="btn btn-success btn-sm disabled"><i class="mdi mdi-plus-circle mr-2 fa fa-check"></i> Selesai</a>
+							</td>
+							<td></td>
+						</tr>
 					</table>
 				</div>
 				<!-- /.box-body -->
 			</div>
 			<!-- /.box -->
-		</div>
+			</div>
 	<!-- /.box-body -->
 </div>
 <!-- /.box -->

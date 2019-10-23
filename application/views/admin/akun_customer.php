@@ -9,10 +9,10 @@
 		<div class="box-body">
 			<div class="box box-warning disabled box-solid">
 				<div class="box-body">
+					<form class="form-horizontal" method="post" action="SimpanAkunCustomer">
 					<div class="container">
 						<div class="row">
 							<div class="col-md-5">
-								<form class="form-horizontal" method="post" action="SimpanAkunCustomer">
 								 <div class="box-body">
 									 <!-- <div class="form-group">
 										 <label for="" class="col-sm-4 control-label">Kode</label>
@@ -35,10 +35,10 @@
 
 								 </div>
 								 <!-- /.box-body -->
-							
+
 							</div>
 							<div class="col-md-5">
-								
+
 								 <div class="box-body">
 									 <div class="form-group">
 									 	  <label for="" class="col-sm-4 control-label">Email</label>
@@ -60,7 +60,7 @@
 									 </div> -->
 								 </div>
 								 <!-- /.box-body -->
-								
+
 							</div>
 						</div>
 					</div>
@@ -79,7 +79,6 @@
 							<th>Username</th>
 							<th>Password</th>
 							<th>Email</th>
-							<th>Level</th>
 							<th>Pilihan</th>
 						</tr>
 						</thead>
@@ -94,7 +93,6 @@
 			          			<td><?php echo $key["username"];?></td>
 								<td><?php echo $key["password"];?></td>
 								<td><?php echo $key["email"];?></td>
-								<td><?php echo $key["level"];?></td>
 								<td align="center">
 									<a href="#modal-edit-data-supplier" data-toggle="modal" class="btn btn-warning btn-sm"><i class="mdi mdi-plus-circle mr-2 fa fa-pencil"></i></a>
 									<button class="btn btn-danger btn-sm" onclick="hapus('<?php echo $key["id_user"]; ?>')"><i class="mdi mdi-plus-circle mr-2 fa fa-close"></i></button>

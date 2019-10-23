@@ -18,45 +18,44 @@
 										 <div class="form-group">
 											 <label for="" class="col-sm-4 control-label">Jenis Cetak</label>
 											 <div class="col-sm-7">
-												 <input type="text" class="form-control" name="jenis_cetak" placeholder="Jenis Cetak">
+												 <!-- <input type="text" class="form-control" name="jenis_cetak" placeholder="Jenis Cetak"> -->
+					                  <select class="form-control" name="jenis_cetak">
+					                    <option>Undangan</option>
+					                    <option>Yasin</option>
+					                    <option>Kalender</option>
+					                  </select>
 											 </div>
 										 </div>
 										 <div class="form-group">
-											 <label for="" class="col-sm-4 control-label">Jenis Kertas</label>
+											 <label for="" class="col-sm-4 control-label">Jumlah (Pcs)</label>
 											 <div class="col-sm-7">
 												 <input type="text" class="form-control" name="jenis_kertas" placeholder="Jenis Kertas">
 											 </div>
 										 </div>
 									 </div>
 									 <!-- /.box-body -->
-									
+
 								</div>
 								<div class="col-md-5">
 									<form class="form-horizontal">
 									 <div class="box-body">
 										 <div class="form-group">
-											 <label for="" class="col-sm-4 control-label">Ukuran</label>
+											 <label for="" class="col-sm-4 control-label">Harga (Per-Pcs)</label>
 											 <div class="col-sm-7">
-												 <input type="text" class="form-control" name="ukuran" placeholder="Ukuran">
+												 <input type="text" class="form-control" name="harga" placeholder="Harga Per-Pcs" disabled>
 											 </div>
 										 </div>
 										 <div class="form-group">
-											 <label for="" class="col-sm-4 control-label">Tinta</label>
+											 <label for="" class="col-sm-4 control-label">Total Harga</label>
 											 <div class="col-sm-7">
-												 <input type="text" class="form-control" name="tinta" placeholder="Tinta">
-											 </div>
-										 </div>
-										 <div class="form-group">
-											 <label for="" class="col-sm-4 control-label">Harga</label>
-											 <div class="col-sm-7">
-												 <input type="text" class="form-control" name="harga" placeholder="Harga">
+												 <input type="text" class="form-control" name="harga" placeholder="Total Harga" disabled>
 											 </div>
 										 </div>
 									 </div>
 									 <!-- /.box-body -->
-									
+
 								</div>
-						
+
 						</div>
 					</div>
 					<button type="submit" class="btn btn-info btn-block"><i class="fa fa-save"></i> Simpan</button>
@@ -72,10 +71,9 @@
 							<th>No</th>
 							<!-- <th>Kode</th> -->
 							<th>Jenis Cetak</th>
-							<th>Jenis Kertas</th>
-							<th>Ukuran</th>
-							<th>Tinta</th>
-							<th>Harga</th>
+							<th>Jumlah (Pcs)</th>
+							<th>Harga (Per-Pcs)</th>
+							<th>Total Harga</th>
 							<th>Pilihan</th>
 						</tr>
 						</thead>
@@ -101,11 +99,10 @@
 							<tr>
 								<td><?php echo $a; ?></td>
 								<td><?php echo $key["nama_jenis_cetak"];?></td>
-			          			<td><?php echo $key["jenis_kertas"];?></td>
-			          			<td><?php echo $key["ukuran_kertas"];?></td>
-			          			<td><?php echo $key["tinta"];?></td>
-			          			<td><?php echo $key["harga"];?></td>
-								
+			          			<td><?php echo $key["jumlah_pcs"];?></td>
+			          			<td><?php echo $key["harga_per-pcs"];?></td>
+			          			<td><?php echo $key["total_harga"];?></td>
+
 								<td align="center">
 									<a href="#modal-edit-data-supplier" data-toggle="modal" class="btn btn-warning btn-sm"><i class="mdi mdi-plus-circle mr-2 fa fa-pencil"></i></a>
 									<button class="btn btn-danger btn-sm" onclick="hapus('<?php echo $key["id_jenisc"]; ?>')"><i class="mdi mdi-plus-circle mr-2 fa fa-close"></i></button>

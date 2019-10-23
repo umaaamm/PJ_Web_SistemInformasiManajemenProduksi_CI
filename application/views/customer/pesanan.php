@@ -28,7 +28,12 @@
 									 <div class="form-group">
 										 <label for="" class="col-sm-4 control-label">Jenis Cetak</label>
 										 <div class="col-sm-7">
-											 <input type="text" class="form-control" id="" placeholder="Jenis Cetak">
+											 <select class="form-control" name="jenis_cetak">
+												 <option>- Pilih -</option>
+												 <option>Undangan</option>
+												 <option>Yasin</option>
+												 <option>Kalender</option>
+											 </select>
 										 </div>
 									 </div>
 									 <div class="form-group">
@@ -38,9 +43,10 @@
 										 </div>
 									 </div>
 									 <div class="form-group">
-										 <label for="" class="col-sm-4 control-label">Catatan</label>
+										 <label for="" class="col-sm-4 control-label">Berkas</label>
 										 <div class="col-sm-7">
-											 <textarea name="name" class="form-control" rows="2" cols=""></textarea>
+											 <input type="file" class="form-control" id="" placeholder="Uplaod">
+											 <!-- <textarea name="name" class="form-control" rows="2" cols=""></textarea> -->
 										 </div>
 									 </div>
 								 </div>
@@ -51,9 +57,15 @@
 								<form class="form-horizontal">
 								 <div class="box-body">
 									 <div class="form-group">
-										 <label for="" class="col-sm-4 control-label">Customer</label>
+										 <label for="" class="col-sm-4 control-label">Harga (Per-Pcs)</label>
 										 <div class="col-sm-7">
-											 <input type="text" class="form-control" id="" placeholder="Customer">
+											 <input type="text" class="form-control" name="harga" placeholder="Harga (Per-Pcs)" disabled>
+										 </div>
+									 </div>
+									 <div class="form-group">
+										 <label for="" class="col-sm-4 control-label">Nama Customer</label>
+										 <div class="col-sm-7">
+											 <input type="text" class="form-control" id="" placeholder="Nama Customer" disabled>
 										 </div>
 									 </div>
 									 <div class="form-group">
@@ -87,10 +99,11 @@
 							<th>Tanggal</th>
 							<th>Jenis Cetak</th>
 							<th>Jumlah</th>
-							<th>Customer</th>
+							<th>Berkas</th>
+							<th>Harga (Per-Pcs)</th>
+							<th>Nama Customer</th>
 							<th>No. Telp</th>
 							<th>Alamat</th>
-							<th>Ket/Catatan</th>
 							<th>Status Pesanan</th>
 							<th>Pilihan</th>
 						</tr>
@@ -101,13 +114,15 @@
 							<td></td>
 							<td></td>
 							<td></td>
+							<td align="center">
+								<a href="#" class="btn btn-warning btn-sm"><i class="mdi mdi-plus-circle mr-2 fa fa-download"></i></a>
+							</td>
 							<td></td>
 							<td></td>
 							<td></td>
-							<td>
-								<td align="center">
+							<td></td>
+							<td align="center">
 									<a href="#" class="btn btn-warning btn-sm disabled"><i class="mdi mdi-plus-circle mr-2 fa fa-spinner"></i> Proses</a>
-								</td>
 							</td>
 							<td align="center">
 								<a href="#" class="btn btn-warning btn-sm"><i class="mdi mdi-plus-circle mr-2 fa fa-pencil"></i></a>
@@ -119,13 +134,15 @@
 							<td></td>
 							<td></td>
 							<td></td>
+							<td align="center">
+								<a href="#" class="btn btn-warning btn-sm"><i class="mdi mdi-plus-circle mr-2 fa fa-download"></i></a>
+							</td>
 							<td></td>
 							<td></td>
 							<td></td>
-							<td>
-								<td align="center">
-									<a href="#" class="btn btn-success btn-sm disabled"><i class="mdi mdi-plus-circle mr-2 fa fa-check"></i> Selesai</a>
-								</td>
+							<td></td>
+							<td align="center">
+								<a href="#" class="btn btn-success btn-sm disabled"><i class="mdi mdi-plus-circle mr-2 fa fa-check"></i> Selesai</a>
 							</td>
 							<td></td>
 						</tr>

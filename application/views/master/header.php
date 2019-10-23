@@ -26,9 +26,9 @@
             <span class="hidden-xs">Administrator</span>
           </a>
           <ul class="dropdown-menu" style="width: 0px">
-            <li class="header">
+            <!-- <li class="header">
               <a href="#"><i class="fa fa-edit"></i> Ubah Password</a>
-            </li>
+            </li> -->
             <li class="footer">
               <a href="<?php echo base_url(); ?>login/admin_logout"><i class="fa fa-power-off"></i> Logout</a>
             </li>
