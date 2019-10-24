@@ -46,12 +46,12 @@
 
   <!-- /.login-logo -->
   <div class="login-box-body">
-    <p class="login-box-msg">Please log in</p>
+    <p class="login-box-msg">Silahkan masukkan email & password</p>
 
-    <form action="<?php echo base_url(); ?>login/login_baak_process" method="post">
+    <form action="<?php echo base_url(); ?>login/" method="post">
       <div class="form-group has-feedback">
-        <input type="text" class="form-control" placeholder="Username" name="username" id="username">
-        <span class="glyphicon glyphicon-user form-control-feedback"></span>
+        <input type="text" class="form-control" placeholder="Email" name="email" id="email">
+        <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
       </div>
       <div class="form-group has-feedback">
         <input type="password" class="form-control" placeholder="Password" name="password" id="password">

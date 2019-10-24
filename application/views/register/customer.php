@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>Login Customer</title>
+	<title>Register Customer</title>
 	<!-- Tell the browser to be responsive to screen width -->
 	<meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
 	<!-- Bootstrap 3.3.7 -->
@@ -38,40 +38,48 @@
 	<!-- Google Font -->
 	<link rel="stylesheet" href="<?php echo base_url(); ?>assets/fonts/source_sans.css">
 </head>
-<body class="hold-transition login-page">
-<div class="login-box">
-  <div class="login-logo">
-    <h3><b><a href="#">Login Customer</a></b></h3>
-  </div>
+<body class="hold-transition register-page">
+	<div class="register-box">
+	  <div class="register-logo">
+	    <a href="#"><b>Register</b></a>
+	  </div>
 
-  <!-- /.login-logo -->
-  <div class="login-box-body">
-    <p class="login-box-msg">Silahkan masukkan email & password</p>
-
-    <form action="<?php echo base_url(); ?>login/" method="post">
-      <div class="form-group has-feedback">
-        <input type="text" class="form-control" placeholder="Email" name="email" id="email">
-        <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
-      </div>
-      <div class="form-group has-feedback">
-        <input type="password" class="form-control" placeholder="Password" name="password" id="password">
-        <span class="glyphicon glyphicon-lock form-control-feedback"></span>
-      </div>
-			<div class="row">
-				<div class="col-xs-7">
-					<a href="<?php echo base_url(); ?>register/customer" class="text-center">Saya belum punya akun</a>
-				</div>
-				<!-- /.col -->
-				<div class="col-xs-5">
-					<button type="submit" class="btn btn-primary btn-block btn-flat" name="submit">Log In</button>
-				</div>
-				<!-- /.col -->
-			</div>
-
-    </form>
-  </div>
-  <!-- /.login-box-body -->
-</div>
-<!-- /.login-box -->
+	  <div class="register-box-body">
+	    <form action="#" method="post">
+	      <div class="form-group has-feedback">
+	        <input type="text" class="form-control" placeholder="Nama Lengkap">
+	        <span class="glyphicon glyphicon-user form-control-feedback"></span>
+	      </div>
+				<div class="form-group has-feedback">
+	        <textarea type="text" class="form-control" placeholder="Alamat"></textarea>
+	        <span class="glyphicon glyphicon-road form-control-feedback"></span>
+	      </div>
+	      <div class="form-group has-feedback">
+	        <input type="email" class="form-control" placeholder="Email">
+	        <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
+	      </div>
+	      <div class="form-group has-feedback">
+	        <input type="password" class="form-control" placeholder="Password">
+	        <span class="glyphicon glyphicon-lock form-control-feedback"></span>
+	      </div>
+	      <div class="form-group has-feedback">
+	        <input type="password" class="form-control" placeholder="Ketik ulang password">
+	        <span class="glyphicon glyphicon-log-in form-control-feedback"></span>
+	      </div>
+	      <div class="row">
+					<div class="col-xs-7">
+						<a href="<?php echo base_url(); ?>login/customer" class="text-center">Saya sudah punya akun</a>
+					</div>
+	        <!-- /.col -->
+	        <div class="col-xs-5">
+	          <button type="submit" class="btn btn-primary btn-block btn-flat pull-right">Register</button>
+	        </div>
+	        <!-- /.col -->
+	      </div>
+	    </form>
+	  </div>
+	  <!-- /.form-box -->
+	</div>
+	<!-- /.register-box -->
 </body>
 </html>
