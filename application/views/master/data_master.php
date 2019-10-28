@@ -136,6 +136,16 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 				'autoWidth'   : true
 			})
 
+			$('#dt-list-pesanan').DataTable({
+				'paging'      : true,
+				'lengthChange': true,
+				'searching'   : true,
+				'ordering'    : true,
+				'info'        : true,
+				'scrollX'			: true,
+				'autoWidth'   : true
+			})
+
 			$('#dt-list-pembelian').DataTable({
 				'paging'      : true,
 				'lengthChange': true,
