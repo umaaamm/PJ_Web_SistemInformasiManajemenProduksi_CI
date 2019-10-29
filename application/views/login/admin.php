@@ -47,8 +47,11 @@
   <!-- /.login-logo -->
   <div class="login-box-body">
     <p class="login-box-msg">Silahkan masukkan email & password</p>
+<?php 
 
-    <form action="<?php echo base_url(); ?>login/" method="post">
+echo $this->session->flashdata('notif_l');
+?>
+    <form action="<?php echo base_url(); ?>login/aksi_login_admin" method="post">
       <div class="form-group has-feedback">
         <input type="text" class="form-control" placeholder="Email" name="email" id="email">
         <span class="glyphicon glyphicon-envelope form-control-feedback"></span>

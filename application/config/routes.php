@@ -53,6 +53,8 @@ $route['default_controller'] = 'Admin';
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
 
+$route['HalamanUtama'] = 'admin';
+
 /* Halaman Admin */
 $route['Admin/Supplier'] = 'ControllerSupplier';
 $route['Admin/SimpanSupplier'] = 'ControllerSupplier/simpan';
@@ -75,6 +77,9 @@ $route['Admin/SimpanAkunAdmin'] = 'ControllerAkunAdmin/simpan';
 $route['Admin/AkunCustomer'] = 'ControllerAkunCustomer';
 $route['Admin/SimpanAkunCustomer'] = 'ControllerAkunCustomer/simpan';
 
+$route['Register'] = 'register/simpan';
+$route['LoginUser'] = 'login/customer';
+$route['LoginAdmin'] = 'login/admin';
 /* Halaman Customer */
 // $route['Customer/Pesanan'] = 'ControllerPesanan';
 // $route['Customer/SimpanPesanan'] = 'ControllerPesanan/simpan';

@@ -1,5 +1,8 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
+
+if ($_SESSION['status'] == 'login') {
+
 ?>
 <!DOCTYPE html>
 <html>
@@ -59,6 +62,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
       <div class="col-md-12">
 	     	<?php
 					echo $this->session->flashdata('notif');
+					echo $this->session->flashdata('notif_l');
 				?>
 			</div>
 		 </div>
@@ -209,3 +213,13 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 	</script>
 </body>
 </html>
+
+<?php }else{ 
+	if ($_SESSION['level'] == 'admin') {
+		redirect('LoginAdmin');
+	}else{
+		redirect('LoginUser');
+	}
+	
+	}
+?>

@@ -30,7 +30,7 @@
               <a href="#"><i class="fa fa-edit"></i> Ubah Password</a>
             </li> -->
             <li class="footer">
-              <a href="<?php echo base_url(); ?>login/admin_logout"><i class="fa fa-power-off"></i> Logout</a>
+              <a href="<?php echo base_url(); ?>login/logout_admin"><i class="fa fa-power-off"></i> Logout</a>
             </li>
           </ul>
         </li>
