@@ -26,8 +26,6 @@ class ControllerSupplier extends CI_Controller {
 		$data['sidebar'] = 'master/aside';
 		$data['footer']= 'master/footer';
 		$data['content']= 'admin/data_supplier';
-
-
 		$this->load->view('master/data_master',$data);
 	}
 
@@ -35,7 +33,6 @@ class ControllerSupplier extends CI_Controller {
 		$data['nama_supplier']=$this->input->post("supplier");
 		$data['supplier_barang']=$this->input->post("barang");
 		$data['telpon']=$this->input->post("nohp");
-		//print_r($data);die;
 		$this->RsModel->TambahData("tbl_supplier",$data);
 		$this->session->set_flashdata("notif","<div class='alert alert-success'><i class='fa fa-check'></i> Data berhasil ditambah</div>");
 		header('location:'.base_url().'Admin/Supplier');
@@ -57,7 +54,6 @@ class ControllerSupplier extends CI_Controller {
 		$data['email']=$this->input->post("email");
 		$data['bagian']=$this->input->post("bagian");
 		$data['level']=$this->input->post("level");
-		//print_r($where);die;
 		$this->RsModel->EditData("tbl_admin",$data,$where);
 		$this->session->set_flashdata("notif","<div class='alert alert-warning'><i class='fa fa-pencil'></i> Data berhasil diedit</div>");
 		header('location:'.base_url().'Admin/KelolaAdmin');

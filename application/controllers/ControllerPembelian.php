@@ -27,15 +27,12 @@ class ControllerPembelian extends CI_Controller {
 		$data['sidebar'] = 'master/aside';
 		$data['footer']= 'master/footer';
 		$data['content']= 'admin/pembelian';
-
-
 		$this->load->view('master/data_master',$data);
 	}
 
 	public function simpan(){
 		$data['id_barang']=$this->input->post("id_barang");
 		$data['stok']=$this->input->post("stok");
-		//print_r($data);die;
 		$this->RsModel->TambahData("tbl_data_pembelian",$data);
 		$this->session->set_flashdata("notif","<div class='alert alert-success'><i class='fa fa-check'></i> Data berhasil ditambah</div>");
 		header('location:'.base_url().'Admin/Pembelian');
@@ -57,7 +54,6 @@ class ControllerPembelian extends CI_Controller {
 		$data['email']=$this->input->post("email");
 		$data['bagian']=$this->input->post("bagian");
 		$data['level']=$this->input->post("level");
-		//print_r($where);die;
 		$this->RsModel->EditData("tbl_admin",$data,$where);
 		$this->session->set_flashdata("notif","<div class='alert alert-warning'><i class='fa fa-pencil'></i> Data berhasil diedit</div>");
 		header('location:'.base_url().'Admin/KelolaAdmin');

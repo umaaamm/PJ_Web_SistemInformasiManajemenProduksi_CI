@@ -26,8 +26,6 @@ class ControllerJenisCetak extends CI_Controller {
 		$data['sidebar'] = 'master/aside';
 		$data['footer']= 'master/footer';
 		$data['content']= 'admin/jenis_cetak';
-
-
 		$this->load->view('master/data_master',$data);
 	}
 
@@ -37,9 +35,6 @@ class ControllerJenisCetak extends CI_Controller {
 		$data['ukuran_kertas']=$this->input->post("ukuran");
 		$data['tinta']=$this->input->post("tinta");
 		$data['harga']=$this->input->post("harga");
-
-
-		//print_r($data);die;
 		$this->RsModel->TambahData("tbl_jenis_cetak",$data);
 		$this->session->set_flashdata("notif","<div class='alert alert-success'><i class='fa fa-check'></i> Data berhasil ditambah</div>");
 		header('location:'.base_url().'Admin/JenisCetak');
@@ -61,7 +56,6 @@ class ControllerJenisCetak extends CI_Controller {
 		$data['email']=$this->input->post("email");
 		$data['bagian']=$this->input->post("bagian");
 		$data['level']=$this->input->post("level");
-		//print_r($where);die;
 		$this->RsModel->EditData("tbl_admin",$data,$where);
 		$this->session->set_flashdata("notif","<div class='alert alert-warning'><i class='fa fa-pencil'></i> Data berhasil diedit</div>");
 		header('location:'.base_url().'Admin/KelolaAdmin');
